@@ -21,9 +21,9 @@ default: &default
 
 development:
   <<: *default
-  database: progress_book_tracker_be_development
-  username: postgres
-  password: eldante666
+  database: mydatabasename
+  username: myusername
+  password: mypassword
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -57,7 +57,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: progress_book_tracker_be_test  
+  database: mytestdatabasename
+  username: myusername
+  password: mypassword 
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

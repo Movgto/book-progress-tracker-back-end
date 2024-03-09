@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  resources :books, only: [:index, :create, :update, :destroy]
+  resources :categories, only: %i[index create]
+
+  get '/current_user', to: 'current_user#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

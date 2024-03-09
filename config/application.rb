@@ -20,8 +20,7 @@ Bundler.require(*Rails.groups)
 
 module ProgressBookTrackerBe
   class Application < Rails::Application
-
-    config.assets.enabled = true
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
